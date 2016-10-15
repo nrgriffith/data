@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-
+from parfile import startDate, DATA
 from os import listdir
 from os.path import isfile, join
 from datetime import datetime as date
@@ -7,12 +7,12 @@ from sys import exit
 
 ###### Parameters -- CHANGE AS NEEDED! #####
 pathName = "../pulled-data" # Local path name
-outputFile = "data.txt" # File name to write to
+outputFile = DATA # File name to write to
 nFiles = 15558 # Known number of file
 skipN = 12 # Number of lines to skip
 dateChars = 10 # Number of characters in date format
 dateFormat = "%Y_%m_%d" # Format of date
-startDate = date.strptime("2016_07_01", dateFormat) # Date experiment began
+startDate = date.strptime(startDate.replace("-", "_"), dateFormat) # Date experiment began
 answer = ""
 
 # Get list of file names
